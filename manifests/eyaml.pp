@@ -36,7 +36,7 @@ class hiera::eyaml (
       file { "${confdir}/keys/private_key.pkcs7.pem":
         ensure  => file,
         content => $private_key_content,
-        mode    => '0400',
+        mode    => '0600',
         owner   => $owner,
         group   => $group,
         require => File["${confdir}/keys"],
@@ -45,7 +45,7 @@ class hiera::eyaml (
         file { "${confdir}/keys/public_key.pkcs7.pem":
           ensure  => file,
           content => $public_key_content,
-          mode    => '0400',
+          mode    => '0644',
           owner   => $owner,
           group   => $group,
           require => File["${confdir}/keys"],
