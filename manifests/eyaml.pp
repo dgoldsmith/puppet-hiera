@@ -29,7 +29,6 @@ class hiera::eyaml (
     ensure => directory,
     owner  => $owner,
     group  => $group,
-    before => Exec['createkeys'],
   }
 
   if $private_key_content {
